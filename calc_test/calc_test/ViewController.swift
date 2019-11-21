@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     var num:String = "" //formulas[?]を保持
     var formulas_num:String = "" //formulasへ追加する前に数字を組み合わせるための変数　例えば formulas_num = "1" + "0" →　formulas_num = "10"
     var only_formulas:String = "" //式を画面に（Fotmulas.text）に計算式として表示　それ以外の機能は持たない
-
+    var nums:Int = 0
     //numが数値かどうかを判断する　これはnumが　num = "1" や num = "+" を保持している可能性があるため　*引用元　https://teratail.com/questions/54252
     func isOnlyNumber(_ str:String) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES '\\\\d+'")
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     //数式 ⇒ 逆ポーランド記法(Reverse Polish Notation) へ変換
-    func Formula_To_Pland(){
+    func Formula_To_Polish(){
         for i in 0..<formulas.count{
             num = formulas[i]
             var Recu = true
@@ -56,7 +56,6 @@ class ViewController: UIViewController {
                             if stacks.isEmpty{
                                 Recu = false
                             }else{      //四則演算の優先順位を検査する。　"/" > "*" > "+" = "-"   ()は導入予定
-                                print("a")
                                 if num == "+" || num == "-"{
                                     if stacks[0] == "*" || stacks[0] == "/"{
                                         //numが"+"か"-"の時、stacksの一番上にある記号が"*"または"/"の時、その"*"または"/"をbuffaに追加する。
@@ -93,6 +92,45 @@ class ViewController: UIViewController {
             buffa.append(stacks[i])
         }
     }
+    //逆ポーランド記法(Reverse Polish Notation) ⇒ 答え へ変換
+    func Polish_To_Answer(){
+        stacks.removeAll()
+        for i in 0 ..< buffa.count{
+            if buffa[i] == "+" || buffa[i] == "-" || buffa[i] == "*" || buffa[i] == "/"{
+                switch buffa[i]{
+                case "+":
+                    num = String(Int(stacks[1])! + Int(stacks[0])!)
+                    stacks.remove(at:1)
+                    stacks.remove(at:0)
+                    stacks.insert(num, at: 0)
+                case "-":
+                    num = String(Int(stacks[1])! - Int(stacks[0])!)
+                    stacks.remove(at:1)
+                    stacks.remove(at:0)
+                    stacks.insert(num, at: 0)
+                case "*":
+                    num = String(Int(stacks[1])! * Int(stacks[0])!)
+                    stacks.remove(at:1)
+                    stacks.remove(at:0)
+                    stacks.insert(num, at: 0)
+                case "/":
+                    num = String(Int(stacks[1])! / Int(stacks[0])!)
+                    stacks.remove(at:1)
+                    stacks.remove(at:0)
+                    stacks.insert(num, at: 0)
+                default:
+                    only_formulas = "ERROR"
+                    print("error")
+                    
+                }
+                
+            }else{
+                stacks.insert(buffa[i], at: 0)
+            }
+            
+        }
+        Ans.text = stacks[0]
+    }
     
     
     @IBAction func Button(_ sender: UIButton) {  // "1" = tag 1 , "2" = tag 2 , ....., "9" = tag 9
@@ -128,13 +166,15 @@ class ViewController: UIViewController {
     @IBAction func Equal(_ sender: Any) {
         formulas.append(formulas_num)
         formulas_num = ""
-        Formula_To_Pland()        //計算式から逆ポーランドへ変換する関数
-        
+        Formula_To_Polish()//計算式から逆ポーランドへ変換する関数
+        Polish_To_Answer()
         for i in 0 ..< buffa.count{
             formulas_num += buffa[i]
         }
-        Ans.text = formulas_num
-        
+        print("計算式" + String(only_formulas))
+        print("逆ポーランド式" + String(formulas_num))
+        print("")
+        //Ans.text = formulas_num
     }
     @IBAction func AllClear(_ sender: Any) {
         formulas.removeAll()
