@@ -56,12 +56,14 @@ class ViewController: UIViewController {
                             if stacks.isEmpty{
                                 Recu = false
                             }else{      //四則演算の優先順位を検査する。　"/" > "*" > "+" = "-"   ()は導入予定
+                                print("a")
                                 if num == "+" || num == "-"{
                                     if stacks[0] == "*" || stacks[0] == "/"{
                                         //numが"+"か"-"の時、stacksの一番上にある記号が"*"または"/"の時、その"*"または"/"をbuffaに追加する。
                                         buffa.append(stacks[0])
                                         stacks.removeFirst()
                                     }else{
+                                        Recu = false
                                         //何もしない　ループの最後にstacksに追加するコードをかいた。
                                     }
                                     
@@ -70,19 +72,26 @@ class ViewController: UIViewController {
                                         buffa.append(stacks[0])
                                         stacks.removeFirst()
                                     }else{
+                                        Recu = false
                                         //何もしない
                                     }
                                 }else{   //numが"/"の時ここを通る。
+                                    Recu = false
                                     //何もしない
                                 }
                             }
                         }
+                        //print("Recu_End")
                         // stacksに追加する
                         stacks.insert(num, at: 0)
+                        
                     }
                 }
             }
-            }
+        }
+        for i in 0 ..< stacks.count{
+            buffa.append(stacks[i])
+        }
     }
     
     
@@ -116,6 +125,27 @@ class ViewController: UIViewController {
         Formula.text = only_formulas
     }
     
+    @IBAction func Equal(_ sender: Any) {
+        formulas.append(formulas_num)
+        formulas_num = ""
+        Formula_To_Pland()        //計算式から逆ポーランドへ変換する関数
+        
+        for i in 0 ..< buffa.count{
+            formulas_num += buffa[i]
+        }
+        Ans.text = formulas_num
+        
+    }
+    @IBAction func AllClear(_ sender: Any) {
+        formulas.removeAll()
+        stacks.removeAll()
+        buffa.removeAll()
+        num = ""
+        formulas_num = ""
+        only_formulas = ""
+        Formula.text = ""
+        Ans.text = "0"
+    }
     
     @IBOutlet weak var Formula: UILabel!
     @IBOutlet weak var Ans: UILabel!
