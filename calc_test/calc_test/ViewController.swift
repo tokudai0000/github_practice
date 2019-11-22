@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     var formulas_num:String = "" //formulasへ追加する前に数字を組み合わせるための変数　例えば formulas_num = "1" + "0" →　formulas_num = "10"
     var only_formulas:String = "" //式を画面に（Fotmulas.text）に計算式として表示　それ以外の機能は持たない
     var nums:Int = 0
+    var signal_TF = true
     //numが数値かどうかを判断する　これはnumが　num = "1" や num = "+" を保持している可能性があるため　*引用元　https://teratail.com/questions/54252
     func isOnlyNumber(_ str:String) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES '\\\\d+'")
@@ -130,17 +131,41 @@ class ViewController: UIViewController {
         }
         Ans.text = stacks[0]
     }
+    @IBAction func ButtonZero(_ sender: Any) {
+        if formulas_num == ""{
+            // など最初に０が来るのを防ぐ　例えば　0+02-0332*01＝？？　など
+        }else{
+            formulas_num += "0" //"10"や"1000"など数字の組み合わせに対応する
+            only_formulas += "0" //計算式を表示するだけ
+            Formula.text = only_formulas
+        }
+    }
     
     
     @IBAction func Button(_ sender: UIButton) {  // "1" = tag 1 , "2" = tag 2 , ....., "9" = tag 9
         formulas_num += String(sender.tag) //"10"や"1000"など数字の組み合わせに対応する
         only_formulas += String(sender.tag) //計算式を表示するだけ
         Formula.text = only_formulas        //計算式を画面に表示
+        signal_TF = true
     }
     
     @IBAction func Signal(_ sender: UIButton) {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
-        formulas.append(formulas_num) //数値を追加
-        formulas_num = ""
+        if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =
+            signal_TF = false
+            formulas.append(formulas_num) //数値を追加
+            formulas_num = ""
+        }else{
+            formulas.removeLast()
+            
+            
+            
+            //
+            //*--------------ここにonly_formulas（式だけを画面に表示する変数）の後ろの文字を消して新しい記号を入れる
+            // 例えば 1+2+3+ → 1+3+3 → 1+2+3-  プラスからマイナスに変更する
+            //
+            
+            
+        }
         
         switch String(sender.tag){
         case "100":
@@ -159,9 +184,11 @@ class ViewController: UIViewController {
             only_formulas = "ERROR"
             print("error")
         }
+        print(only_formulas)
         Formula.text = only_formulas
+            
     }
-    
+            
     @IBAction func Equal(_ sender: Any) {
         formulas.append(formulas_num)
         formulas_num = ""
@@ -175,6 +202,7 @@ class ViewController: UIViewController {
         print("")
         //Ans.text = formulas_num
     }
+    
     @IBAction func AllClear(_ sender: Any) {
         formulas.removeAll()
         stacks.removeAll()
@@ -185,7 +213,7 @@ class ViewController: UIViewController {
         Formula.text = ""
         Ans.text = "0"
     }
-    
+
     @IBOutlet weak var Formula: UILabel!
     @IBOutlet weak var Ans: UILabel!
     
@@ -193,4 +221,5 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
 }
