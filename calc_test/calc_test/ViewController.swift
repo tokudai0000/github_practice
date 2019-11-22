@@ -57,14 +57,13 @@ class ViewController: UIViewController {
                                 Recu = false
                             }else{      //四則演算の優先順位を検査する。　"/" > "*" > "+" = "-"   ()は導入予定
                                 if num == "+" || num == "-"{
-                                    if stacks[0] == "*" || stacks[0] == "/"{
-                                        //numが"+"か"-"の時、stacksの一番上にある記号が"*"または"/"の時、その"*"または"/"をbuffaに追加する。
-                                        buffa.append(stacks[0])
-                                        stacks.removeFirst()
-                                    }else{
-                                        Recu = false
+                                    //numが"+"か"-"の時、stacksの一番上にある記号をbuffaに追加する。
+                                    buffa.append(stacks[0])
+                                    stacks.removeFirst()
+                                    //}else{
+                                      //  Recu = false
                                         //何もしない　ループの最後にstacksに追加するコードをかいた。
-                                    }
+                                    //}
                                     
                                 }else if num == "*"{
                                     if stacks[0] == "/"{
