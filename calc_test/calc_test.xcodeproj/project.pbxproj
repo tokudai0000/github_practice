@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44138FF8238923D70074D1CA /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44138FF7238923D70074D1CA /* Calculator.swift */; };
 		CEB5E9D923842F470088DA68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9D823842F470088DA68 /* AppDelegate.swift */; };
 		CEB5E9DB23842F470088DA68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9DA23842F470088DA68 /* SceneDelegate.swift */; };
 		CEB5E9DD23842F470088DA68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9DC23842F470088DA68 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44138FF7238923D70074D1CA /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		CEB5E9D523842F470088DA68 /* calc_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calc_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB5E9D823842F470088DA68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB5E9DA23842F470088DA68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				CEB5E9D823842F470088DA68 /* AppDelegate.swift */,
 				CEB5E9DA23842F470088DA68 /* SceneDelegate.swift */,
 				CEB5E9DC23842F470088DA68 /* ViewController.swift */,
+				44138FF7238923D70074D1CA /* Calculator.swift */,
 				CEB5E9DE23842F470088DA68 /* Main.storyboard */,
 				CEB5E9E123842F480088DA68 /* Assets.xcassets */,
 				CEB5E9E323842F480088DA68 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB5E9DD23842F470088DA68 /* ViewController.swift in Sources */,
+				44138FF8238923D70074D1CA /* Calculator.swift in Sources */,
 				CEB5E9D923842F470088DA68 /* AppDelegate.swift in Sources */,
 				CEB5E9DB23842F470088DA68 /* SceneDelegate.swift in Sources */,
 			);
