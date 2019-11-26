@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -16,14 +16,14 @@
                         <viewControllerLayoutGuide type="bottom" id="97l-45-Y89"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oz0-zZ-lUL">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="180"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="formula" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95A-O5-WXv">
-                                        <rect key="frame" x="20" y="10" width="856" height="60"/>
+                                        <rect key="frame" x="20" y="10" width="374" height="60"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="qDm-2w-06S"/>
@@ -33,13 +33,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF4-Zq-Bh9">
-                                        <rect key="frame" x="435" y="80" width="26" height="50.5"/>
+                                        <rect key="frame" x="194" y="80" width="26" height="50.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ans" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-6l-sMw">
-                                        <rect key="frame" x="466" y="80" width="410" height="40"/>
+                                        <rect key="frame" x="225" y="80" width="169" height="40"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="tm0-9q-ApN"/>
@@ -63,10 +63,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zj5-Vl-pge">
-                                <rect key="frame" x="0.0" y="180" width="896" height="213"/>
+                                <rect key="frame" x="0.0" y="224" width="414" height="638"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZp-gM-KLH">
-                                        <rect key="frame" x="5" y="130" width="218" height="37"/>
+                                        <rect key="frame" x="5" y="384.66666666666663" width="97.333333333333329" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -77,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3W-AV-mRc">
-                                        <rect key="frame" x="5" y="171.5" width="292" height="36.5"/>
+                                        <rect key="frame" x="5" y="511.33333333333343" width="199.66666666666666" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -88,7 +88,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-ta-aOO">
-                                        <rect key="frame" x="228" y="130" width="217.5" height="36.5"/>
+                                        <rect key="frame" x="107.33333333333334" y="384.66666666666663" width="97.333333333333343" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -99,7 +99,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-ok-EDW">
-                                        <rect key="frame" x="450.5" y="130" width="218" height="36.5"/>
+                                        <rect key="frame" x="209.66666666666663" y="384.66666666666663" width="97" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -110,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X1-gX-4RD">
-                                        <rect key="frame" x="302" y="171.5" width="292" height="36.5"/>
+                                        <rect key="frame" x="209.66666666666663" y="511.33333333333343" width="97" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -118,7 +118,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEW-pQ-H3Z">
-                                        <rect key="frame" x="450.5" y="88" width="218" height="37"/>
+                                        <rect key="frame" x="209.66666666666663" y="258.33333333333331" width="97" height="121.33333333333331"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -129,7 +129,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrC-eF-xEA">
-                                        <rect key="frame" x="228" y="88" width="217.5" height="37"/>
+                                        <rect key="frame" x="107.33333333333334" y="258.33333333333331" width="97.333333333333343" height="121.33333333333331"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -140,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOh-8y-afN">
-                                        <rect key="frame" x="5" y="88" width="218" height="37"/>
+                                        <rect key="frame" x="5" y="258.33333333333331" width="97.333333333333329" height="121.33333333333331"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -151,7 +151,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUK-IA-wnl">
-                                        <rect key="frame" x="5" y="46.5" width="218" height="36.5"/>
+                                        <rect key="frame" x="5" y="131.66666666666669" width="97.333333333333329" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -162,7 +162,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNB-d0-HcK">
-                                        <rect key="frame" x="228" y="46.5" width="217.5" height="36.5"/>
+                                        <rect key="frame" x="107.33333333333334" y="131.66666666666669" width="97.333333333333343" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -173,7 +173,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-bq-MIo">
-                                        <rect key="frame" x="450.5" y="46.5" width="218" height="36.5"/>
+                                        <rect key="frame" x="209.66666666666663" y="131.66666666666669" width="97" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -184,7 +184,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziV-qq-t3f">
-                                        <rect key="frame" x="673.5" y="130" width="217.5" height="36.5"/>
+                                        <rect key="frame" x="311.66666666666669" y="384.66666666666663" width="97.333333333333314" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -195,7 +195,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlI-OJ-lmS">
-                                        <rect key="frame" x="673.5" y="46.5" width="217.5" height="36.5"/>
+                                        <rect key="frame" x="311.66666666666669" y="131.66666666666669" width="97.333333333333314" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -206,7 +206,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWq-jc-3W5">
-                                        <rect key="frame" x="5" y="5" width="218" height="36.5"/>
+                                        <rect key="frame" x="5" y="5.0000000000000071" width="97.333333333333329" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="AC">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -217,7 +217,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-PG-orp">
-                                        <rect key="frame" x="673.5" y="5" width="217.5" height="36.5"/>
+                                        <rect key="frame" x="311.66666666666669" y="5.0000000000000071" width="97.333333333333314" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="/">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -228,7 +228,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ln-fU-Snv">
-                                        <rect key="frame" x="228" y="5" width="217.5" height="36.5"/>
+                                        <rect key="frame" x="107.33333333333334" y="5.0000000000000071" width="97.333333333333343" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="(">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -239,7 +239,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gn-2p-pEb">
-                                        <rect key="frame" x="450.5" y="5" width="218" height="36.5"/>
+                                        <rect key="frame" x="209.66666666666663" y="5.0000000000000071" width="97" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title=")">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -250,7 +250,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opi-Z6-feu">
-                                        <rect key="frame" x="673.5" y="88" width="217.5" height="37"/>
+                                        <rect key="frame" x="311.66666666666669" y="258.33333333333331" width="97.333333333333314" height="121.33333333333331"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -261,7 +261,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhO-Xh-agR">
-                                        <rect key="frame" x="599" y="171.5" width="292" height="36.5"/>
+                                        <rect key="frame" x="311.66666666666669" y="511.33333333333343" width="97.333333333333314" height="121.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="=">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -291,6 +291,7 @@
                                     <constraint firstItem="AZp-gM-KLH" firstAttribute="leading" secondItem="zj5-Vl-pge" secondAttribute="leading" constant="5" id="GWK-En-zMF"/>
                                     <constraint firstItem="sOh-8y-afN" firstAttribute="leading" secondItem="zj5-Vl-pge" secondAttribute="leading" constant="5" id="Hi4-ia-M6Y"/>
                                     <constraint firstItem="WUK-IA-wnl" firstAttribute="height" secondItem="cWq-jc-3W5" secondAttribute="height" id="Ibr-vt-jCC"/>
+                                    <constraint firstItem="HhO-Xh-agR" firstAttribute="width" secondItem="ziV-qq-t3f" secondAttribute="width" id="Ihr-yG-6MG"/>
                                     <constraint firstItem="P3W-AV-mRc" firstAttribute="height" secondItem="AZp-gM-KLH" secondAttribute="height" id="JNK-cH-xqz"/>
                                     <constraint firstAttribute="trailing" secondItem="WlI-OJ-lmS" secondAttribute="trailing" constant="5" id="KPE-Zr-SbU"/>
                                     <constraint firstItem="9X1-gX-4RD" firstAttribute="height" secondItem="HhO-Xh-agR" secondAttribute="height" id="Ln0-gT-zzi"/>
@@ -346,7 +347,6 @@
                                     <constraint firstItem="Hmz-ta-aOO" firstAttribute="top" secondItem="jrC-eF-xEA" secondAttribute="bottom" constant="5" id="tJq-C5-MbN"/>
                                     <constraint firstItem="Hmz-ta-aOO" firstAttribute="width" secondItem="Hw1-ok-EDW" secondAttribute="width" id="uWK-3b-e1v"/>
                                     <constraint firstAttribute="trailing" secondItem="ziV-qq-t3f" secondAttribute="trailing" constant="5" id="urW-ZL-DzQ"/>
-                                    <constraint firstItem="P3W-AV-mRc" firstAttribute="width" secondItem="9X1-gX-4RD" secondAttribute="width" id="uta-xO-FxL"/>
                                     <constraint firstItem="EEW-pQ-H3Z" firstAttribute="height" secondItem="opi-Z6-feu" secondAttribute="height" id="vW8-84-dbW"/>
                                     <constraint firstItem="qbO-bq-MIo" firstAttribute="height" secondItem="WlI-OJ-lmS" secondAttribute="height" id="w2w-iD-ylJ"/>
                                     <constraint firstAttribute="bottom" secondItem="HhO-Xh-agR" secondAttribute="bottom" constant="5" id="wMx-1z-GgJ"/>
