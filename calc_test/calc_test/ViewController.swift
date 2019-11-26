@@ -30,9 +30,10 @@ class ViewController: UIViewController {
     var num:String = "" //formulas[?]を保持
     var formulas_num:String = "" //formulasへ追加する前に数字を組み合わせるための変数　例えば formulas_num = "1" + "0" →　formulas_num = "10"
     var only_formulas:String = "" //式を画面に（Fotmulas.text）に計算式として表示　それ以外の機能は持たない
+    
     var nums:Int = 0
     var signal_TF = true
-    //numが数値かどうかを判断する　これはnumが　num = "1" や num = "+" を保持している可能性があるため　*引用元　https://teratail.com/questions/54252
+    //numが数値かどうかを判断する　これはnumが　num = "1" や num = "+"を保持している可能性があるため　*引用元　https://teratail.com/questions/54252
     func isOnlyNumber(_ str:String) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES '\\\\d+'")
         return predicate.evaluate(with: str)
@@ -47,7 +48,12 @@ class ViewController: UIViewController {
                 buffa.append(num)
             } else {
                 if num == ")"{          // numが　”)” かどうかを判断
-                    //コード追加
+                    //for i in Int(stacks.index(of: "(")!)...stacks.count{
+                    //  buffa.append(stacks[i])
+                        
+                    
+                    
+                    
                 }else{
                     if num == "("{      // numが　"(" ならばstacksに追加
                         stacks.append(num)
@@ -80,7 +86,6 @@ class ViewController: UIViewController {
                                 }
                             }
                         }
-                        //print("Recu_End")
                         // stacksに追加する
                         stacks.insert(num, at: 0)
                         
@@ -150,7 +155,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func Signal(_ sender: UIButton) {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
-        if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =
+        if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =  str = "abcd" str[0:1] = a
             signal_TF = false
             formulas.append(formulas_num) //数値を追加
             formulas_num = ""
@@ -199,8 +204,6 @@ class ViewController: UIViewController {
         }
         print("計算式" + String(only_formulas))
         print("逆ポーランド式" + String(formulas_num))
-        print("")
-        //Ans.text = formulas_num
     }
     
     @IBAction func AllClear(_ sender: Any) {
