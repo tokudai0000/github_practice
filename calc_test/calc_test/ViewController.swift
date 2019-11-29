@@ -47,26 +47,29 @@ class ViewController: UIViewController {
     func Formula_To_Polish(){
         for i in 0..<formulas.count{
             num = formulas[i]
+            
             var Recu = true
             
             if isOnlyNumber(num) {              // numが数字ならばbuffaに追加する
                 buffa.append(num)
+                
             }else if num == ")"{                // numが　”)” かどうかを判断
+                
                 for _ in 0 ..< stacks.firstIndex(of: "(")!{
-                    
-                    
+                    print(stacks.firstIndex(of: "(")!)
                     print("a")
                     print(stacks)
                     print(buffa)
                     print("b")
-                    
-                    
-                    if stacks[0] == "(" || stacks[0] == ""{
-                        stacks.removeFirst()
-                    }else{
-                            buffa.append(stacks[0])
-                            stacks.removeFirst() //buffaに追加した四則演算記号をstacksから消去
-                        }
+                    buffa.append(stacks[0])
+                    stacks.removeFirst()
+
+//                    if stacks[0] == "(" || stacks[0] == ""{
+//                        stacks.removeFirst()
+//                    }else{
+//                            buffa.append(stacks[0])
+//                            stacks.removeFirst() //buffaに追加した四則演算記号をstacksから消去
+//                    }
                     }
             }else if num == "("{
                 stacks.insert("(", at:0)
@@ -75,11 +78,13 @@ class ViewController: UIViewController {
                                          //Recu == true はstacksの中に要素が存在することを指している。
                     if stacks.isEmpty{
                         Recu = false
+                        stacks.insert(num, at: 0)
                     }else{               //四則演算の優先順位を検査する。　"/" > "*" > "+" = "-"
                         if num == "+" || num == "-"{    //numが"+"か"-"の時、stacksの一番上にある記号をbuffaに追加する。
                                     
                             if stacks[0] == "(" || stacks[0] == ""{
                                 Recu = false
+                                stacks.insert(num, at: 0)
                             }else{
                                 buffa.append(stacks[0])
                                 stacks.removeFirst()
@@ -90,19 +95,22 @@ class ViewController: UIViewController {
                                 stacks.removeFirst()
                             }else{
                                 Recu = false
+                                stacks.insert(num, at: 0)
                             }
                         }else{               //numが"/"の時ここを通る。
                             Recu = false
+                            stacks.insert(num, at: 0)
                         }
-                    }   // stacksに追加する
-                    stacks.insert(num, at: 0)  //積み木のように上からstacksに入れていき、上から取り出していく
+                    }   // stacksに追加する積み木のように上からstacksに入れていき、上から取り出していく
                 }
             }
-        
-                    
         }
         for i in 0 ..< stacks.count{
+            if stacks[i] == "(" || stacks[i] == ""{
+                
+            }else{
                 buffa.append(stacks[i])
+            }
         }
     }
     
@@ -167,7 +175,7 @@ class ViewController: UIViewController {
         signal_TF = true
     }
     
-    @IBAction func Signal(_ sender: UIButton) {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103 , "(" = tag 104 , ")" = tag 105
+    @IBAction func Signal(_ sender: UIButton) {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
         if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =  str = "abcd" str[0:1] = a
             signal_TF = false
             formulas.append(formulas_num) //数値を追加
@@ -205,7 +213,13 @@ class ViewController: UIViewController {
             
     }
            
-    @IBAction func parentheses(_ sender: UIButton) {
+    @IBAction func parentheses(_ sender: UIButton) {//"(" = tag 104 , ")" = tag 105
+        if formulas_num == ""{
+            
+        }else{
+            formulas.append(formulas_num)
+            formulas_num = ""
+        }
         switch String(sender.tag){
             case "104":
                 only_formulas += "("
@@ -223,8 +237,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func Equal(_ sender: Any) {
-        formulas.append(formulas_num)
-        formulas_num = ""
+        if formulas_num == ""{
+            
+        }else{
+            formulas.append(formulas_num)
+            formulas_num = ""
+        }
+        print(formulas)
         Formula_To_Polish()//計算式から逆ポーランドへ変換する関数
         Polish_To_Answer()
         for i in 0 ..< buffa.count{
