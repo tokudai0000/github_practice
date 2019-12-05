@@ -178,8 +178,11 @@ class ViewController: UIViewController {
     @IBAction func Signal(_ sender: UIButton) {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
         if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =  str = "abcd" str[0:1] = a
             signal_TF = false
-            formulas.append(formulas_num) //数値を追加
-            formulas_num = ""
+            if formulas[formulas.count - 1] == ")"{
+            }else{
+                formulas.append(formulas_num) //数値を追加
+                formulas_num = ""
+            }
         }else{
             formulas.removeLast()
             
