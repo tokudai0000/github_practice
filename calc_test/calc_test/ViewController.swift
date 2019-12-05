@@ -268,6 +268,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var Formula: UILabel!
     @IBOutlet weak var Ans: UILabel!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0545B52398A15C00DBDB3E /* TEST.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE0545B42398A15C00DBDB3E /* TEST.jpg */; };
 		CEB5E9D923842F470088DA68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9D823842F470088DA68 /* AppDelegate.swift */; };
 		CEB5E9DD23842F470088DA68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9DC23842F470088DA68 /* ViewController.swift */; };
 		CEB5E9E023842F470088DA68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB5E9DE23842F470088DA68 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0545B42398A15C00DBDB3E /* TEST.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = TEST.jpg; path = ../../../Downloads/TEST.jpg; sourceTree = "<group>"; };
 		CEB5E9D523842F470088DA68 /* calc_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calc_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB5E9D823842F470088DA68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB5E9DC23842F470088DA68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				CEB5E9DE23842F470088DA68 /* Main.storyboard */,
 				CEB5E9E123842F480088DA68 /* Assets.xcassets */,
 				CEB5E9E323842F480088DA68 /* LaunchScreen.storyboard */,
+				CE0545B42398A15C00DBDB3E /* TEST.jpg */,
 				CEB5E9E623842F480088DA68 /* Info.plist */,
 			);
 			path = calc_test;
@@ -232,6 +235,7 @@
 				CEB5E9E523842F480088DA68 /* LaunchScreen.storyboard in Resources */,
 				CEB5E9E223842F480088DA68 /* Assets.xcassets in Resources */,
 				CEB5E9E023842F470088DA68 /* Main.storyboard in Resources */,
+				CE0545B52398A15C00DBDB3E /* TEST.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XSC9AJPSP3;
 				INFOPLIST_FILE = calc_test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XSC9AJPSP3;
 				INFOPLIST_FILE = calc_test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
