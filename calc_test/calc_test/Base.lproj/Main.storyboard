@@ -84,7 +84,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZo-97-kfX"/>
+                                            <action selector="Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezw-Ik-c5P"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-ta-aOO">
