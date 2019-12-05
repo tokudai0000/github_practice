@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     var only_formulas:String = "" //式を画面に（Fotmulas.text）に計算式として表示　それ以外の機能は持たない
     
     var signal_TF = true //記号の重複を防ぐ
+    var roud_num:Double = 0
     
     
 //--numが数値かどうかを判断する------------------------------------
@@ -132,7 +133,9 @@ class ViewController: UIViewController {
                 stacks.insert(buffa[i], at: 0)
             }
         }
-        Ans.text = stacks[0] //答えを画面に表示
+        //0.1+0.1+0.1の時　答えに１０をかけて四捨五入をし、１０で割ると計算結果が正常になる
+        roud_num = round(Double(stacks[0])! * 10)
+        Ans.text = String(roud_num / 10) //答えを画面に表示
     }
 
 // -数値を入力--------------------------------------------------------
@@ -210,10 +213,6 @@ class ViewController: UIViewController {
         }
         Formula_To_Polish()  //計算式から逆ポーランドへ変換する関数
         Polish_To_Answer()   //逆ポーランドから答えを表示する関数
-        
-        //for i in 0 ..< buffa.count{
-          //  formulas_num += buffa[i]
-        //}
     }
     
 //--ACを入力された時---------------------------------
