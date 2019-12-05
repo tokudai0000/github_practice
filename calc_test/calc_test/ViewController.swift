@@ -125,22 +125,22 @@ class ViewController: UIViewController {
             if buffa[i] == "+" || buffa[i] == "-" || buffa[i] == "*" || buffa[i] == "/"{
                 switch buffa[i]{
                 case "+":
-                    num = String(Int(stacks[1])! + Int(stacks[0])!)
+                    num = String(Double(stacks[1])! + Double(stacks[0])!)
                     stacks.remove(at:1)
                     stacks.remove(at:0)
                     stacks.insert(num, at: 0)
                 case "-":
-                    num = String(Int(stacks[1])! - Int(stacks[0])!)
+                    num = String(Double(stacks[1])! - Double(stacks[0])!)
                     stacks.remove(at:1)
                     stacks.remove(at:0)
                     stacks.insert(num, at: 0)
                 case "*":
-                    num = String(Int(stacks[1])! * Int(stacks[0])!)
+                    num = String(Double(stacks[1])! * Double(stacks[0])!)
                     stacks.remove(at:1)
                     stacks.remove(at:0)
                     stacks.insert(num, at: 0)
                 case "/":
-                    num = String(Int(stacks[1])! / Int(stacks[0])!)
+                    num = String(Double(stacks[1])! / Double(stacks[0])!)
                     stacks.remove(at:1)
                     stacks.remove(at:0)
                     stacks.insert(num, at: 0)
@@ -267,7 +267,19 @@ class ViewController: UIViewController {
         Ans.text = "0"
         signal_TF = true
     }
-
+    @IBAction func decimal_point(_ sender: Any) {
+        if formulas_num.contains(".") == true{
+            
+        }else if formulas_num == ""{
+            formulas_num = "0."
+            only_formulas += "0."
+        }else{
+            formulas_num += "."
+            only_formulas += "."
+        }
+        Formula.text = only_formulas
+    }
+    
     @IBOutlet weak var Formula: UILabel!
     @IBOutlet weak var Ans: UILabel!
     
