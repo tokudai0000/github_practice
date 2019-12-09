@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58C0385A239E2E00001684E2 /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC3E32239E1F2C000A35A2 /* Calc.swift */; };
+		58C0385B239E2E01001684E2 /* Calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC3E32239E1F2C000A35A2 /* Calc.swift */; };
 		CEB5E9D923842F470088DA68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9D823842F470088DA68 /* AppDelegate.swift */; };
-		CEB5E9DB23842F470088DA68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9DA23842F470088DA68 /* SceneDelegate.swift */; };
 		CEB5E9DD23842F470088DA68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5E9DC23842F470088DA68 /* ViewController.swift */; };
 		CEB5E9E023842F470088DA68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB5E9DE23842F470088DA68 /* Main.storyboard */; };
 		CEB5E9E223842F480088DA68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB5E9E123842F480088DA68 /* Assets.xcassets */; };
@@ -35,10 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58FC3E32239E1F2C000A35A2 /* Calc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Calc.swift; sourceTree = "<group>"; };
 		CEB5E9D523842F470088DA68 /* calc_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calc_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB5E9D823842F470088DA68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEB5E9DA23842F470088DA68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEB5E9DC23842F470088DA68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEB5E9DC23842F470088DA68 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; };
 		CEB5E9DF23842F470088DA68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEB5E9E123842F480088DA68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB5E9E423842F480088DA68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,8 +100,8 @@
 		CEB5E9D723842F470088DA68 /* calc_test */ = {
 			isa = PBXGroup;
 			children = (
+				58FC3E32239E1F2C000A35A2 /* Calc.swift */,
 				CEB5E9D823842F470088DA68 /* AppDelegate.swift */,
-				CEB5E9DA23842F470088DA68 /* SceneDelegate.swift */,
 				CEB5E9DC23842F470088DA68 /* ViewController.swift */,
 				CEB5E9DE23842F470088DA68 /* Main.storyboard */,
 				CEB5E9E123842F480088DA68 /* Assets.xcassets */,
@@ -135,9 +136,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEB5E9FF23842F490088DA68 /* Build configuration list for PBXNativeTarget "calc_test" */;
 			buildPhases = (
+				CEB5E9D323842F470088DA68 /* Resources */,
 				CEB5E9D123842F470088DA68 /* Sources */,
 				CEB5E9D223842F470088DA68 /* Frameworks */,
-				CEB5E9D323842F470088DA68 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -259,9 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C0385A239E2E00001684E2 /* Calc.swift in Sources */,
 				CEB5E9DD23842F470088DA68 /* ViewController.swift in Sources */,
 				CEB5E9D923842F470088DA68 /* AppDelegate.swift in Sources */,
-				CEB5E9DB23842F470088DA68 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C0385B239E2E01001684E2 /* Calc.swift in Sources */,
 				CEB5E9F023842F490088DA68 /* calc_testTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -434,7 +436,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6XAMT5HBK5;
 				INFOPLIST_FILE = calc_test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +446,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.azukid.calc-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -451,7 +456,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UPVA9S79G2;
 				INFOPLIST_FILE = calc_test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,6 +466,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.azukid.calc-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,7 +479,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = calc_testTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +500,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = calc_testTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
