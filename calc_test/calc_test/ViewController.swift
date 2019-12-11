@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var Formula: UILabel!
@@ -57,7 +56,7 @@ class ViewController: UIViewController {
             // 例えば 1+2+3+ → 1+3+3 → 1+2+3-  プラスからマイナスに変更する
             //
             
-            
+    
         }
         
         switch String(sender.tag){
@@ -79,9 +78,30 @@ class ViewController: UIViewController {
         }
         print(calc.only_formulas)
         Formula.text = calc.only_formulas
-            
+   
     }
-            
+// -括弧記号を入力----------------------------------------------------
+// "(" = tag 104 ,    ")" = tag 105
+    @IBAction func parentheses(_ sender: UIButton) {
+        if formulas_num == ""{
+        }else{//   (2+3) の時　3 を　formulasに追加するために通る
+            formulas.append(formulas_num)
+            formulas_num = ""
+        }
+        switch String(sender.tag){
+            case "104":
+                only_formulas += "("
+                formulas.append("(")
+            case "105":
+                only_formulas += ")"
+                formulas.append(")")
+            default:
+                break
+        }
+        Formula.text = only_formulas //式を表示
+    }
+    
+//--イコールを入力された時-----------------------------
     @IBAction func Equal(_ sender: Any) {
         calc.formulas.append(calc.formulas_num)
         calc.formulas_num = ""
@@ -96,6 +116,7 @@ class ViewController: UIViewController {
         //Ans.text = formulas_num
     }
     
+//--ACを入力された時---------------------------------
     @IBAction func AllClear(_ sender: Any) {
         calc.formulas.removeAll()
         calc.stacks.removeAll()
@@ -105,6 +126,6 @@ class ViewController: UIViewController {
         calc.only_formulas = ""
         Formula.text = ""
         Ans.text = "0"
+        signal_TF = true
     }
-
 }
