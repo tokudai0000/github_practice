@@ -23,22 +23,25 @@
 // import UIKit
 import Foundation
 
-
-public class Calc {
+class Calc {
+    //計算式を１つずつ配列に追加
+    var formulas:[String] = []
+    //逆ポーランドへ変換する際に一時的に四則記号を保持する。最終的には空のリストとなる
+    var stacks:[String] = []
+    //逆ポーランドへ変換した式を保持
+    var buffa:[String] = []
+    //formulas[num]を保持
+    var num:String = ""
+    //formulasへ追加する前に数字を組み合わせるための変数
+    var formulas_num:String = ""
+    //式を画面に（Fotmulas.text）に計算式として表示
+    var only_formulas:String = ""
     
-    public var formulas:[String] = [] //計算式　  例えとして　"1+2-3*4/5" を使用　       formulas = ["1","+","2","-","3","*","4","/","5"]
-    
-    var stacks:[String] = [] //逆ポーランドへ変換する際に一時的に四則記号を保持する    stacks = ["+","-","*","/"]  ##最終的には空のリストとなる
-    var buffa:[String] = [] //逆ポーランドへ変換した式を保持　[]                   buffa = ["1","2","3","4","*","5","/","-","+"]
-    var num:String = "" //formulas[?]を保持
-    var formulas_num:String = "" //formulasへ追加する前に数字を組み合わせるための変数　例えば formulas_num = "1" + "0" →　formulas_num = "10"
-    var only_formulas:String = "" //式を画面に（Fotmulas.text）に計算式として表示　それ以外の機能は持たない
-    var nums:Int = 0
     var signal_TF = true
+    var arg:String = ""
     
-    
-    //numが数値かどうかを判断する　これはnumが　num = "1" や num = "+" を保持している可能性があるため　*引用元　https://teratail.com/questions/54252
-    private func isOnlyNumber(_ str:String) -> Bool {
+    //numが数値かどうかを判断する*引用元　https://teratail.com/questions/54252
+    func isOnlyNumber(_ str:String) -> Bool {
         let predicate = NSPredicate(format: "SELF MATCHES '\\\\d+'")
         return predicate.evaluate(with: str)
     }
@@ -98,7 +101,7 @@ public class Calc {
         }
     }
     //逆ポーランド記法(Reverse Polish Notation) ⇒ 答え へ変換
-    func Polish_To_Answer() -> String {
+    func Polish_To_Answer() -> String{
         stacks.removeAll()
         for i in 0 ..< buffa.count{
             if buffa[i] == "+" || buffa[i] == "-" || buffa[i] == "*" || buffa[i] == "/"{
@@ -134,8 +137,98 @@ public class Calc {
             }
             
         }
-        //Ans.text = stacks[0]
-        return stacks.first ?? ""
+        return stacks[0]
     }
-        
+    
+    func ButtonZero() -> String {
+        if formulas_num == "" {
+            // など最初に０が来るのを防ぐ　例えば　0+02-0332*01＝？？　など
+        }else{
+            formulas_num += "0" //"10"や"1000"など数字の組み合わせに対応する
+            only_formulas += "0" //計算式を表示するだけ
+        }
+        return only_formulas
+    }
+    
+    // "1" = tag 1 , "2" = tag 2 , ....., "9" = tag 9
+    func Button(arg:String) -> String{
+    formulas_num += arg //"10"や"1000"など数字の組み合わせに対応する
+    only_formulas += arg //計算式を表示するだけ
+    signal_TF = true
+    return only_formulas
+    }
+    
+    func Signal(arg:String) -> String {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
+         if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =
+             signal_TF = false
+             formulas.append(formulas_num) //数値を追加
+             formulas_num = ""
+         }else{
+             formulas.removeLast()
+             
+             //
+             //*--------------ここにonly_formulas（式だけを画面に表示する変数）の後ろの文字を消して新しい記号を入れる
+             // 例えば 1+2+3+ → 1+3+3 → 1+2+3-  プラスからマイナスに変更する
+             //
+             
+         }
+         switch arg{
+         case "100":
+             only_formulas += "+"
+             formulas.append("+")
+         case "101":
+             only_formulas += "-"
+             formulas.append("-")
+         case "102":
+             only_formulas += "*"
+             formulas.append("*")
+         case "103":
+             only_formulas += "/"
+             formulas.append("/")
+         default:
+             only_formulas = "ERROR"
+             print("error")
+         }
+        return only_formulas
+     }
+    
+    func Parentheses(arg:String) -> String{
+        if formulas_num == ""{
+        }else{//   (2+3) の時　3 を　formulasに追加するために通る
+            formulas.append(formulas_num)
+            formulas_num = ""
+        }
+        switch arg{
+            case "104":
+                only_formulas += "("
+                formulas.append("(")
+            case "105":
+                only_formulas += ")"
+                formulas.append(")")
+            default:
+                break
+        }
+        return only_formulas
+    }
+    
+    func Equal() -> String{
+        formulas.append(formulas_num)
+        formulas_num = ""
+        Formula_To_Polish()//計算式から逆ポーランドへ変換する関数
+        //Polish_To_Answer()
+        for i in 0 ..< buffa.count{
+            formulas_num += buffa[i]
+        }
+        return Polish_To_Answer()
+    }
+    
+    func AllClear() {
+        formulas.removeAll()
+        stacks.removeAll()
+        buffa.removeAll()
+        num = ""
+        formulas_num = ""
+        only_formulas = ""
+        signal_TF = true
+    }
 }
