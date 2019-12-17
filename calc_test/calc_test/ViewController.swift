@@ -19,9 +19,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-//    @IBAction func ButtonZero(_ sender: Any) {
-//        Formula.text = calc.ButtonZero()
-//    }
+    @IBAction func ButtonZero(_ sender: Any) {
+        Formula.text = calc.ButtonZero()
+    }
     
     // "1" = tag 1 , "2" = tag 2 , ....., "9" = tag 9
     @IBAction func Button(_ sender: UIButton) {
@@ -34,12 +34,12 @@ class ViewController: UIViewController {
     }
 
     // "(" = tag 104 ,    ")" = tag 105
-//    @IBAction func Parentheses(_ sender: UIButton) {
-//        Formula.text = calc.Parentheses(arg: String(sender.tag))
-//    }
+    @IBAction func Parentheses(_ sender: UIButton) {
+        Formula.text = calc.Parentheses(arg: String(sender.tag))
+    }
 
     @IBAction func Equal(_ sender: Any) {
-        Formula.text = calc.Equal()
+        Ans.text = calc.Equal()
     }
     
     @IBAction func AllClear(_ sender: Any) {

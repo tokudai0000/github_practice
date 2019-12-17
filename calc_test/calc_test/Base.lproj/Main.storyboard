@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="calc_test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nQj-w1-niD"/>
                         <viewControllerLayoutGuide type="bottom" id="97l-45-Y89"/>
@@ -82,6 +82,9 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ButtonZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="41G-iB-zoh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-ta-aOO">
                                         <rect key="frame" x="107.33333333333334" y="384.66666666666663" width="97.333333333333343" height="121.66666666666669"/>
@@ -219,6 +222,9 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="Parentheses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jLG-W7-92y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gn-2p-pEb">
                                         <rect key="frame" x="209.66666666666663" y="5.0000000000000071" width="97" height="121.66666666666669"/>
@@ -227,6 +233,9 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="Parentheses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eHJ-aM-aQZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opi-Z6-feu">
                                         <rect key="frame" x="311.66666666666669" y="258.33333333333331" width="97.333333333333314" height="121.33333333333331"/>

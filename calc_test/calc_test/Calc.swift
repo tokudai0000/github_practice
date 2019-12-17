@@ -48,97 +48,93 @@ class Calc {
     
     //数式 ⇒ 逆ポーランド記法(Reverse Polish Notation) へ変換
     func Formula_To_Polish(){
+        //formulas = ["1","+","2"] のリストの要素数分forで回す
         for i in 0..<formulas.count{
             num = formulas[i]
-            var Recu = true
-            if isOnlyNumber(num) {      // numが数字ならばbuffaに追加する
+            if isOnlyNumber(num) {// numが数字ならばbuffaに追加する
                 buffa.append(num)
-            } else {
-                if num == ")"{          // numが　”)” かどうかを判断
-                    //コード追加
-                }else{
-                    if num == "("{      // numが　"(" ならばstacksに追加
-                        stacks.append(num)
-                    }else{
-                                        //stacksが空になるまでループする。　Recu == true はstacksの中に要素が存在することを指している。
-                        while Recu == true{
-                            if stacks.isEmpty{
-                                Recu = false
-                            }else{      //四則演算の優先順位を検査する。　"/" > "*" > "+" = "-"   ()は導入予定
-                                if num == "+" || num == "-"{
-                                    //numが"+"か"-"の時、stacksの一番上にある記号をbuffaに追加する。
-                                    buffa.append(stacks[0])
-                                    stacks.removeFirst()
-                                    //}else{
-                                      //  Recu = false
-                                        //何もしない　ループの最後にstacksに追加するコードをかいた。
-                                    //}
-                                    
-                                }else if num == "*"{
-                                    if stacks[0] == "/"{
-                                        buffa.append(stacks[0])
-                                        stacks.removeFirst()
-                                    }else{
-                                        Recu = false
-                                        //何もしない
-                                    }
-                                }else{   //numが"/"の時ここを通る。
-                                    Recu = false
-                                    //何もしない
-                                }
-                            }
-                        }
-                        //print("Recu_End")
-                        // stacksに追加する
+            }else if num == ")"{// numが　”)” かどうかを判断
+                for _ in 0 ..< stacks.firstIndex(of: "(")!{
+                    buffa.append(stacks[0])
+                    stacks.removeFirst()
+                    }
+            }else if num == "("{
+                stacks.insert("(", at:0)  //stacksのIndex = 0 に追加
+            }else{
+    //--------------stacksが空になるまでループする。------------------
+                while true{
+                    if stacks.isEmpty{   //stacksが空になったらbreak
                         stacks.insert(num, at: 0)
-                        
+                        break
+        //四則演算の優先順位を検査する。　"/" > "*" > "+" = "-" > "("
+                    }else{
+                        if num == "+" || num == "-"{
+                    //stacksの一番上にある記号をbuffaに追加する。
+                    //num == ")"の時にstacks内の "(" が使用される
+                            if stacks[0] == "(" {
+                                stacks.insert(num, at: 0)
+                                break
+                    //numよりstacksの最上位ある記号の方が優先順位が高い場合
+                            }else{
+                                buffa.append(stacks[0])
+                                stacks.removeFirst()
+                            }
+                        }else if num == "*"{
+                            if stacks[0] == "/"{  //   "/" > "*"
+                                buffa.append(stacks[0])
+                                stacks.removeFirst()
+                    //stacks[0] == "*" or "+" or "-" の時
+                            }else{
+                                stacks.insert(num, at: 0)
+                                break
+                            }
+                        }else{   //numが"/"の時ここを通る。
+                            stacks.insert(num, at: 0)
+                            break
+                        }
+            // stacksは積み木のように上からnumを入れていき、上から取り出していく
                     }
                 }
+    //--------------ループ区間ここまで----------------------
+
+            }
+        }//for i in 0..<formulas.count  終わり
+        for i in 0 ..< stacks.count{
+            if stacks[i] == "(" { //
+            }else{
+                buffa.append(stacks[i])
             }
         }
-        for i in 0 ..< stacks.count{
-            buffa.append(stacks[i])
-        }
-    }
+    }//func Formula_To_Polish() 終わり
+    
     //逆ポーランド記法(Reverse Polish Notation) ⇒ 答え へ変換
     func Polish_To_Answer() -> String{
         stacks.removeAll()
+        //buffa=["1","2","+"]のリストの要素数分forで回す
         for i in 0 ..< buffa.count{
             if buffa[i] == "+" || buffa[i] == "-" || buffa[i] == "*" || buffa[i] == "/"{
-                switch buffa[i]{
+                switch buffa[i]{ //ifより綺麗にコードを書ける
                 case "+":
-                    num = String(Int(stacks[1])! + Int(stacks[0])!)
-                    stacks.remove(at:1)
-                    stacks.remove(at:0)
-                    stacks.insert(num, at: 0)
+                    num = String(Double(stacks[1])! + Double(stacks[0])!)
                 case "-":
-                    num = String(Int(stacks[1])! - Int(stacks[0])!)
-                    stacks.remove(at:1)
-                    stacks.remove(at:0)
-                    stacks.insert(num, at: 0)
+                    num = String(Double(stacks[1])! - Double(stacks[0])!)
                 case "*":
-                    num = String(Int(stacks[1])! * Int(stacks[0])!)
-                    stacks.remove(at:1)
-                    stacks.remove(at:0)
-                    stacks.insert(num, at: 0)
+                    num = String(Double(stacks[1])! * Double(stacks[0])!)
                 case "/":
-                    num = String(Int(stacks[1])! / Int(stacks[0])!)
-                    stacks.remove(at:1)
-                    stacks.remove(at:0)
-                    stacks.insert(num, at: 0)
+                    num = String(Double(stacks[1])! / Double(stacks[0])!)
                 default:
-                    only_formulas = "ERROR"
-                    print("error")
-                    
+                    break
                 }
-                
-            }else{
+                stacks.remove(at:1) //計算で使用した値を消去
+                stacks.remove(at:0)
+                stacks.insert(num, at: 0)//計算後の値を追加
+            }else{       //数値はここを通る
                 stacks.insert(buffa[i], at: 0)
             }
-            
         }
-        return stacks[0]
+        return stacks[0] //答えを画面に表示
     }
+
     
     func ButtonZero() -> String {
         if formulas_num == "" {
@@ -161,8 +157,11 @@ class Calc {
     func Signal(arg:String) -> String {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
          if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =
              signal_TF = false
-             formulas.append(formulas_num) //数値を追加
-             formulas_num = ""
+            if formulas.last == ")"{
+            }else{
+                formulas.append(formulas_num) //数値を追加
+                formulas_num = ""
+            }
          }else{
              formulas.removeLast()
              
@@ -212,7 +211,9 @@ class Calc {
     }
     
     func Equal() -> String{
-        formulas.append(formulas_num)
+        if formulas.last! != ")"{ // formulas.lastが数値ではない時
+            formulas.append(formulas_num)
+        }
         formulas_num = ""
         Formula_To_Polish()//計算式から逆ポーランドへ変換する関数
         //Polish_To_Answer()
