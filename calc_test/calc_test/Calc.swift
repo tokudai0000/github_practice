@@ -216,7 +216,6 @@ class Calc {
         }
         formulas_num = ""
         Formula_To_Polish()//計算式から逆ポーランドへ変換する関数
-        //Polish_To_Answer()
         for i in 0 ..< buffa.count{
             formulas_num += buffa[i]
         }
