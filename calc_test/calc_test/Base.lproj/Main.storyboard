@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Fhu-NP-cL5">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,35 +22,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sn8-40-1P3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKF-lQ-g2k">
-                                        <rect key="frame" x="50" y="354" width="145" height="189"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="電卓"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULl-7D-6vS">
+                                        <rect key="frame" x="231" y="331" width="159" height="201"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="写真"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="modal" id="f36-1G-WAa"/>
+                                            <segue destination="Gxb-Gs-qzm" kind="modal" id="c2H-oY-g4V"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvp-fl-sV9">
-                                        <rect key="frame" x="237" y="354" width="145" height="189"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="カメラ"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8u-oc-rdH">
+                                        <rect key="frame" x="38" y="331" width="150" height="201"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="電卓"/>
                                         <connections>
-                                            <segue destination="Gxb-Gs-qzm" kind="modal" id="ScF-Yl-kMS"/>
+                                            <segue destination="BYZ-38-t0r" kind="modal" id="Kfh-9L-ufK"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="oKF-lQ-g2k" firstAttribute="leading" secondItem="sn8-40-1P3" secondAttribute="leading" constant="50" id="1F4-MM-Q6G"/>
-                                    <constraint firstItem="oKF-lQ-g2k" firstAttribute="height" secondItem="Hvp-fl-sV9" secondAttribute="height" id="EuC-Mb-iGG"/>
-                                    <constraint firstItem="Hvp-fl-sV9" firstAttribute="top" secondItem="sn8-40-1P3" secondAttribute="top" constant="354" id="F4a-7g-zBO"/>
-                                    <constraint firstItem="oKF-lQ-g2k" firstAttribute="width" secondItem="Hvp-fl-sV9" secondAttribute="width" id="Ie6-B1-pxd"/>
-                                    <constraint firstItem="Hvp-fl-sV9" firstAttribute="leading" secondItem="oKF-lQ-g2k" secondAttribute="trailing" constant="42" id="YYe-WP-d9e"/>
-                                    <constraint firstAttribute="trailing" secondItem="Hvp-fl-sV9" secondAttribute="trailing" constant="32" id="lNJ-9c-fhD"/>
-                                    <constraint firstAttribute="bottom" secondItem="oKF-lQ-g2k" secondAttribute="bottom" constant="353" id="nvD-LW-9U0"/>
-                                    <constraint firstItem="oKF-lQ-g2k" firstAttribute="top" secondItem="sn8-40-1P3" secondAttribute="top" constant="354" id="qIR-5X-w6d"/>
-                                    <constraint firstAttribute="bottom" secondItem="Hvp-fl-sV9" secondAttribute="bottom" constant="353" id="wxt-07-jzR"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -78,54 +68,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nCU-Q0-Rju">
-                                <rect key="frame" x="20" y="132" width="374" height="478"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yY-38-hKu">
-                                <rect key="frame" x="155" y="728" width="105" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="セーブ"/>
-                                <connections>
-                                    <action selector="savePicture:" destination="Gxb-Gs-qzm" eventType="touchUpInside" id="wyk-qX-wkj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhm-oV-BUd">
-                                <rect key="frame" x="289" y="728" width="105" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="アルバム"/>
-                                <connections>
-                                    <action selector="showAlbum:" destination="Gxb-Gs-qzm" eventType="touchUpInside" id="5wz-20-r9d"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjX-OF-dEk">
-                                <rect key="frame" x="20" y="638" width="374" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBx-NQ-YH1">
-                                <rect key="frame" x="20" y="52" width="105" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="Fhu-NP-cL5" kind="modal" id="G40-ct-cMQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frb-rr-UdI">
-                                <rect key="frame" x="20" y="728" width="105" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="スタート"/>
-                                <connections>
-                                    <action selector="startCamera:" destination="Gxb-Gs-qzm" eventType="touchUpInside" id="aRa-np-hSB"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ut-Oy-6fC">
+                                <rect key="frame" x="20" y="704" width="374" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfa-BC-Vjo">
+                                        <rect key="frame" x="20" y="10" width="98" height="130"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="スタート">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startCamera:" destination="Gxb-Gs-qzm" eventType="touchUpInside" id="MM6-u0-GVc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2r-hP-8iJ">
+                                        <rect key="frame" x="138" y="10" width="98" height="130"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="セーブ">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="savePicture:" destination="Gxb-Gs-qzm" eventType="touchUpInside" id="V0w-f7-fnU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msk-Fd-g1S">
+                                        <rect key="frame" x="256" y="10" width="98" height="130"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="アルバム">
+                                            <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showAlbum:" destination="Gxb-Gs-qzm" eventType="touchUpInside" id="qGu-6I-DJG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="wfa-BC-Vjo" firstAttribute="width" secondItem="j2r-hP-8iJ" secondAttribute="width" id="3sC-9b-aE1"/>
+                                    <constraint firstItem="msk-Fd-g1S" firstAttribute="top" secondItem="7ut-Oy-6fC" secondAttribute="top" constant="10" id="C6M-Dk-Lbd"/>
+                                    <constraint firstItem="wfa-BC-Vjo" firstAttribute="top" secondItem="7ut-Oy-6fC" secondAttribute="top" constant="10" id="CYb-3d-7KG"/>
+                                    <constraint firstItem="msk-Fd-g1S" firstAttribute="leading" secondItem="j2r-hP-8iJ" secondAttribute="trailing" constant="20" id="Gof-r9-3of"/>
+                                    <constraint firstAttribute="height" constant="150" id="NPO-jE-Wks"/>
+                                    <constraint firstItem="j2r-hP-8iJ" firstAttribute="height" secondItem="msk-Fd-g1S" secondAttribute="height" id="RBE-JE-TYr"/>
+                                    <constraint firstItem="j2r-hP-8iJ" firstAttribute="top" secondItem="7ut-Oy-6fC" secondAttribute="top" constant="10" id="UsV-1a-GMs"/>
+                                    <constraint firstItem="j2r-hP-8iJ" firstAttribute="width" secondItem="msk-Fd-g1S" secondAttribute="width" id="UvE-24-EQO"/>
+                                    <constraint firstItem="j2r-hP-8iJ" firstAttribute="leading" secondItem="wfa-BC-Vjo" secondAttribute="trailing" constant="20" id="Xvh-m6-o9O"/>
+                                    <constraint firstAttribute="trailing" secondItem="msk-Fd-g1S" secondAttribute="trailing" constant="20" id="f0U-cx-16J"/>
+                                    <constraint firstAttribute="bottom" secondItem="msk-Fd-g1S" secondAttribute="bottom" constant="10" id="igZ-q2-Afu"/>
+                                    <constraint firstItem="msk-Fd-g1S" firstAttribute="width" secondItem="wfa-BC-Vjo" secondAttribute="width" id="jtx-Nr-Qyc"/>
+                                    <constraint firstAttribute="bottom" secondItem="j2r-hP-8iJ" secondAttribute="bottom" constant="10" id="r9d-3a-1vv"/>
+                                    <constraint firstItem="wfa-BC-Vjo" firstAttribute="leading" secondItem="7ut-Oy-6fC" secondAttribute="leading" constant="20" id="rqq-1y-LjG"/>
+                                    <constraint firstItem="wfa-BC-Vjo" firstAttribute="height" secondItem="j2r-hP-8iJ" secondAttribute="height" id="xJR-xf-kOZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="wfa-BC-Vjo" secondAttribute="bottom" constant="10" id="zew-yO-lw8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1r-ew-oIJ">
+                                <rect key="frame" x="20" y="74" width="374" height="622"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nCU-Q0-Rju">
+                                        <rect key="frame" x="20" y="10" width="334" height="522"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjX-OF-dEk">
+                                        <rect key="frame" x="20" y="552" width="334" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Cnk-lr-Y4D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mjX-OF-dEk" secondAttribute="bottom" constant="20" symbolic="YES" id="2th-2Y-UjK"/>
+                                    <constraint firstAttribute="trailing" secondItem="nCU-Q0-Rju" secondAttribute="trailing" constant="20" symbolic="YES" id="6R7-qk-g57"/>
+                                    <constraint firstAttribute="trailing" secondItem="mjX-OF-dEk" secondAttribute="trailing" constant="20" symbolic="YES" id="BtH-Qp-ZoE"/>
+                                    <constraint firstItem="mjX-OF-dEk" firstAttribute="top" secondItem="nCU-Q0-Rju" secondAttribute="bottom" constant="20" id="Dul-7a-prs"/>
+                                    <constraint firstItem="nCU-Q0-Rju" firstAttribute="leading" secondItem="f1r-ew-oIJ" secondAttribute="leading" constant="20" symbolic="YES" id="IsV-f3-o3u"/>
+                                    <constraint firstItem="mjX-OF-dEk" firstAttribute="leading" secondItem="f1r-ew-oIJ" secondAttribute="leading" constant="20" symbolic="YES" id="KLE-XB-YwK"/>
+                                    <constraint firstItem="nCU-Q0-Rju" firstAttribute="top" secondItem="f1r-ew-oIJ" secondAttribute="top" constant="10" id="gPR-Nt-jgO"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nog-hk-Djo">
+                                <rect key="frame" x="0.0" y="30" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="写真" id="gG9-Vy-brO">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="nRn-ph-Ef0">
+                                            <connections>
+                                                <segue destination="Fhu-NP-cL5" kind="modal" id="5av-zP-Jkj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="f1r-ew-oIJ" secondAttribute="trailing" constant="20" symbolic="YES" id="OAj-LB-U2h"/>
+                            <constraint firstAttribute="trailing" secondItem="7ut-Oy-6fC" secondAttribute="trailing" constant="20" symbolic="YES" id="Q2f-7K-rZ8"/>
+                            <constraint firstItem="f1r-ew-oIJ" firstAttribute="leading" secondItem="Gmq-pu-A5O" secondAttribute="leading" constant="20" symbolic="YES" id="huT-QU-I7c"/>
+                            <constraint firstItem="7rt-t4-iRY" firstAttribute="top" secondItem="7ut-Oy-6fC" secondAttribute="bottom" constant="8" symbolic="YES" id="pbW-Qq-kOS"/>
+                            <constraint firstItem="7ut-Oy-6fC" firstAttribute="leading" secondItem="Gmq-pu-A5O" secondAttribute="leading" constant="20" symbolic="YES" id="sYC-kM-cj5"/>
+                            <constraint firstItem="7ut-Oy-6fC" firstAttribute="top" secondItem="f1r-ew-oIJ" secondAttribute="bottom" constant="8" symbolic="YES" id="xW7-oa-mn7"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="nCU-Q0-Rju" id="Dh0-J3-Ve7"/>
@@ -440,14 +487,6 @@
                                     <constraint firstAttribute="bottom" secondItem="9X1-gX-4RD" secondAttribute="bottom" constant="5" id="zUF-5p-J38"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxP-5b-VC8">
-                                <rect key="frame" x="20" y="44" width="68" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="Fhu-NP-cL5" kind="modal" id="pVS-jJ-AJJ"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oz0-zZ-lUL">
                                 <rect key="frame" x="0.0" y="144" width="414" height="180"/>
                                 <subviews>
@@ -491,6 +530,19 @@
                                     <constraint firstItem="EF4-Zq-Bh9" firstAttribute="centerX" secondItem="oz0-zZ-lUL" secondAttribute="centerX" id="xdL-ze-AnR"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7Q-VD-uDo">
+                                <rect key="frame" x="0.0" y="26" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="電卓" id="LkO-GZ-Psb">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="dQB-Tu-BtW">
+                                            <connections>
+                                                <segue destination="Fhu-NP-cL5" kind="modal" id="EyG-Ry-D8R"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -515,6 +567,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G40-ct-cMQ"/>
+        <segue reference="EyG-Ry-D8R"/>
     </inferredMetricsTieBreakers>
 </document>
