@@ -34,6 +34,8 @@ class Calc {
     var num:String = ""
     //formulasへ追加する前に数字を組み合わせるための変数
     var formulas_num:String = ""
+    //答えの文字列を操作する変数
+    var ans_operation:String = ""
     //式を画面に（Fotmulas.text）に計算式として表示
     var only_formulas:String = ""
     
@@ -219,6 +221,25 @@ class Calc {
         for i in 0 ..< buffa.count{
             formulas_num += buffa[i]
         }
+        formulas_num = Polish_To_Answer()
+        if formulas_num.count < 12{
+            return formulas_num
+        }else{
+            ans_operation = String(formulas_num.prefix(11))
+            for i in formulas_num{
+                if i == "e"{
+                    
+                }else{
+                
+                }
+            }
+            //formulas.suffix(formulas_num.range(of: "e"))
+            //for i in Int(formulas_num.range(of: "e"))! ..< formulas_num.count{
+                
+        }
+           // ans_operation += String((formulas_num.rangeOfString("e") as AnyObject).location)
+        
+        
         return Polish_To_Answer()
     }
     

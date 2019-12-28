@@ -40,6 +40,7 @@ class CalcController: UIViewController {
 
     @IBAction func Equal(_ sender: Any) {
         Ans.text = calc.Equal()
+        //print(calc.Equal())
     }
     
     @IBAction func AllClear(_ sender: Any) {
