@@ -43,6 +43,11 @@ class CalcController: UIViewController {
         //print(calc.Equal())
     }
     
+    @IBAction func Delete(_ sender: Any) {
+        Formula.text = calc.Delete()
+    }
+    
+    
     @IBAction func AllClear(_ sender: Any) {
         calc.AllClear()
         Formula.text = ""

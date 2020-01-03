@@ -249,6 +249,7 @@
                                         </state>
                                         <connections>
                                             <action selector="ButtonZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BO0-Ea-2tQ"/>
+                                            <action selector="Delete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RiK-p5-XDz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmz-ta-aOO">

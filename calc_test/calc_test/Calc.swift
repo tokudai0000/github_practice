@@ -47,6 +47,33 @@ class Calc {
         let predicate = NSPredicate(format: "SELF MATCHES '\\\\d+'")
         return predicate.evaluate(with: str)
     }
+    //only_formulas ⇨　数式　に変換
+    func Only_formulasToFormula(){
+        for i in only_formulas{
+            num = String(i)
+            if isOnlyNumber(num) {
+                formulas_num += num
+            }else if num == "."{
+                formulas_num += num
+            }else if num == ")" || num == "+" || num == "-" || num == "*" || num == "/"{
+                if formulas.last == ")"{
+                    formulas.append(num)
+                }else{
+                    formulas.append(formulas_num)
+                    formulas_num = ""
+                    formulas.append(num)
+                }
+            }else if num == "("{
+                formulas.append(num)
+            }else{
+                print("error")
+            }
+        }
+        if formulas_num != ""{
+            formulas.append(num)
+        }
+    }
+    
     
     //数式 ⇒ 逆ポーランド記法(Reverse Polish Notation) へ変換
     func Formula_To_Polish(){
@@ -142,7 +169,7 @@ class Calc {
         if formulas_num == "" {
             // など最初に０が来るのを防ぐ　例えば　0+02-0332*01＝？？　など
         }else{
-            formulas_num += "0" //"10"や"1000"など数字の組み合わせに対応する
+            //formulas_num += "0" //"10"や"1000"など数字の組み合わせに対応する
             only_formulas += "0" //計算式を表示するだけ
         }
         return only_formulas
@@ -150,42 +177,42 @@ class Calc {
     
     // "1" = tag 1 , "2" = tag 2 , ....., "9" = tag 9
     func Button(arg:String) -> String{
-    formulas_num += arg //"10"や"1000"など数字の組み合わせに対応する
+    //formulas_num += arg //"10"や"1000"など数字の組み合わせに対応する
     only_formulas += arg //計算式を表示するだけ
     signal_TF = true
     return only_formulas
     }
     
     func Signal(arg:String) -> String {  // "+" = tag 100 , "-" = tag 101 , "*" = tag 102 , "/" = tag 103
-         if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =
-             signal_TF = false
-            if formulas.last == ")"{
-            }else{
-                formulas.append(formulas_num) //数値を追加
-                formulas_num = ""
-            }
-         }else{
-             formulas.removeLast()
-             
-             //
-             //*--------------ここにonly_formulas（式だけを画面に表示する変数）の後ろの文字を消して新しい記号を入れる
-             // 例えば 1+2+3+ → 1+3+3 → 1+2+3-  プラスからマイナスに変更する
-             //
-             
-         }
+//         if signal_TF == true{ //記号の重複に対応　　例えば　10++2+*-7 =
+//             signal_TF = false
+//            if formulas.last == ")"{
+//            }else{
+//                formulas.append(formulas_num) //数値を追加
+//                formulas_num = ""
+//            }
+//         }else{
+//             formulas.removeLast()
+//
+//             //
+//             //*--------------ここにonly_formulas（式だけを画面に表示する変数）の後ろの文字を消して新しい記号を入れる
+//             // 例えば 1+2+3+ → 1+3+3 → 1+2+3-  プラスからマイナスに変更する
+//             //
+//
+//         }
          switch arg{
          case "100":
              only_formulas += "+"
-             formulas.append("+")
+             //formulas.append("+")
          case "101":
              only_formulas += "-"
-             formulas.append("-")
+             //formulas.append("-")
          case "102":
              only_formulas += "*"
-             formulas.append("*")
+             //formulas.append("*")
          case "103":
              only_formulas += "/"
-             formulas.append("/")
+             //formulas.append("/")
          default:
              only_formulas = "ERROR"
              print("error")
@@ -196,16 +223,16 @@ class Calc {
     func Parentheses(arg:String) -> String{
         if formulas_num == ""{
         }else{//   (2+3) の時　3 を　formulasに追加するために通る
-            formulas.append(formulas_num)
+            //formulas.append(formulas_num)
             formulas_num = ""
         }
         switch arg{
             case "104":
                 only_formulas += "("
-                formulas.append("(")
+                //formulas.append("(")
             case "105":
                 only_formulas += ")"
-                formulas.append(")")
+                //formulas.append(")")
             default:
                 break
         }
@@ -213,9 +240,10 @@ class Calc {
     }
     
     func Equal() -> String{
-        if formulas.last! != ")"{ // formulas.lastが数値ではない時
-            formulas.append(formulas_num)
-        }
+        Only_formulasToFormula()
+//        if formulas.last! != ")"{ // formulas.lastが数値ではない時
+//            formulas.append(formulas_num)
+//        }
         formulas_num = ""
         Formula_To_Polish()//計算式から逆ポーランドへ変換する関数
         for i in 0 ..< buffa.count{
@@ -241,6 +269,10 @@ class Calc {
         
         
         return Polish_To_Answer()
+    }
+    func Delete() -> String{
+        only_formulas.removeLast()
+        return only_formulas
     }
     
     func AllClear() {
